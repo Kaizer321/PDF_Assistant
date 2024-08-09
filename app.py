@@ -44,11 +44,11 @@ def handle_input(user_message):
         st.session_state.chat_history.append(assistant_response)
 
         # Force a rerun to update the chat display
-        st.experimental_rerun()
+        st.rerun()
 
 def toggle_theme():
     st.session_state.theme = 'dark' if st.session_state.theme == 'light' else 'light'
-    st.experimental_rerun()
+    st.rerun()
 
 def main():
     if 'theme' not in st.session_state:

@@ -1,12 +1,9 @@
 import os
 from openai import OpenAI
-from dotenv import load_dotenv
+import streamlit as st
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Initialize the OpenAI client with the API key from environment variables
-api_key = os.getenv("OPENAI_API_KEY")
+# Initialize the OpenAI client with the API key from Streamlit secrets
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 def createAssistant(file_ids, title):
